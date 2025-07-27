@@ -30,7 +30,7 @@ def download_single_image(url):
 def download_images_parallel():
     base_url = "https://alfredplpl.github.io/img/without_copyright.png"
     
-    urls = [base_url for _ in range(8192)]
+    urls = [base_url for _ in range(4096)]
     images = []
     start_time = time.time()
     
