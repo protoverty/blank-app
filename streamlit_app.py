@@ -30,11 +30,11 @@ def download_single_image(url):
 def download_images_parallel():
     base_url = "https://alfredplpl.github.io/img/without_copyright.png"
     
-    urls = [base_url for _ in range(16384)]
+    urls = [base_url for _ in range(8192)]
     images = []
     start_time = time.time()
     
-    with ThreadPoolExecutor(max_workers=16) as executor:
+    with ThreadPoolExecutor(max_workers=32) as executor:
         future_to_url = {executor.submit(download_single_image, url): url for url in urls}
         
         for future in as_completed(future_to_url):
